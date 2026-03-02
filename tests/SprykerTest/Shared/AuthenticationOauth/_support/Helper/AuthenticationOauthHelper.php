@@ -45,11 +45,6 @@ class AuthenticationOauthHelper extends Module
      */
     protected const GRANT_TYPE_PASSWORD = 'password';
 
-    /**
-     * @param \Generated\Shared\Transfer\UserTransfer $userTransfer
-     *
-     * @return \Generated\Shared\Transfer\OauthResponseTransfer
-     */
     public function havePasswordAuthorizationToBackendApi(UserTransfer $userTransfer): OauthResponseTransfer
     {
         $glueAuthenticationRequestTransfer = $this->createBackendApiGluePasswordAuthenticationRequestTransfer($userTransfer);
@@ -64,11 +59,6 @@ class AuthenticationOauthHelper extends Module
         return $glueAuthenticationResponseTransfer->getOauthResponse();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return \Generated\Shared\Transfer\OauthResponseTransfer
-     */
     public function havePasswordAuthorizationToStorefrontApi(CustomerTransfer $customerTransfer): OauthResponseTransfer
     {
         /** @var \PHPUnit\Framework\MockObject\MockObject|\Spryker\Shared\Currency\Dependency\Client\CurrencyToSessionInterface $currencyToSessionMock */
@@ -87,11 +77,6 @@ class AuthenticationOauthHelper extends Module
         return $glueAuthenticationResponseTransfer->getOauthResponse();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\UserTransfer $userTransfer
-     *
-     * @return \Generated\Shared\Transfer\GlueAuthenticationRequestTransfer
-     */
     protected function createBackendApiGluePasswordAuthenticationRequestTransfer(UserTransfer $userTransfer): GlueAuthenticationRequestTransfer
     {
         $glueAuthenticationRequestContextTransfer = (new GlueAuthenticationRequestContextTransfer())
@@ -106,11 +91,6 @@ class AuthenticationOauthHelper extends Module
         ])->build();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return \Generated\Shared\Transfer\GlueAuthenticationRequestTransfer
-     */
     protected function createStorefrontApiGluePasswordAuthenticationRequestTransfer(CustomerTransfer $customerTransfer): GlueAuthenticationRequestTransfer
     {
         $glueAuthenticationRequestContextTransfer = (new GlueAuthenticationRequestContextTransfer())

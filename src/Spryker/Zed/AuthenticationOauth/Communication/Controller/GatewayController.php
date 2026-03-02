@@ -16,11 +16,6 @@ use Spryker\Zed\Kernel\Communication\Controller\AbstractGatewayController;
  */
 class GatewayController extends AbstractGatewayController
 {
-    /**
-     * @param \Generated\Shared\Transfer\GlueAuthenticationRequestTransfer $glueAuthenticationRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\GlueAuthenticationResponseTransfer
-     */
     public function authenticateAction(GlueAuthenticationRequestTransfer $glueAuthenticationRequestTransfer): GlueAuthenticationResponseTransfer
     {
         return $this->getFacade()->authenticate($glueAuthenticationRequestTransfer);

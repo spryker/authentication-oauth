@@ -40,9 +40,6 @@ class AuthenticationOauthFacadeTest extends Unit
      */
     protected const TEST_USERNAME_INVALID = 'sonia@spryker.com';
 
-    /**
-     * @return void
-     */
     public function setUp(): void
     {
         parent::setUp();
@@ -52,9 +49,6 @@ class AuthenticationOauthFacadeTest extends Unit
         $this->tester->addDependencies();
     }
 
-    /**
-     * @return void
-     */
     public function testAuthenticateWithValidCredentialsIsSuccessful(): void
     {
         //Arrange
@@ -69,9 +63,6 @@ class AuthenticationOauthFacadeTest extends Unit
         $this->assertNotEmpty($glueAuthenticationResponseTransfer->getOauthResponse()->getAccessToken());
     }
 
-    /**
-     * @return void
-     */
     public function testAuthenticateWithInvalidCredentialsIsFailed(): void
     {
         //Arrange
@@ -86,9 +77,6 @@ class AuthenticationOauthFacadeTest extends Unit
         $this->assertEmpty($glueAuthenticationResponseTransfer->getOauthResponse()->getAccessToken());
     }
 
-    /**
-     * @return void
-     */
     protected function setUserProvider(): void
     {
         $this->tester->setDependency(
@@ -97,9 +85,6 @@ class AuthenticationOauthFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     protected function setUserPasswordOauthRequestGrantTypeConfigurationProvider(): void
     {
         $this->tester->setDependency(

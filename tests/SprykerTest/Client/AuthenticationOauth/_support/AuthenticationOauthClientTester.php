@@ -66,9 +66,6 @@ class AuthenticationOauthClientTester extends Actor
      */
     protected const DEFAULT_CURRENCY = 'EUR';
 
-    /**
-     * @return void
-     */
     public function addDependencies(): void
     {
         $this->setDependency(ClientStoreDependencyProvider::PLUGINS_STORE_EXPANDER, [
@@ -79,11 +76,6 @@ class AuthenticationOauthClientTester extends Actor
         ]);
     }
 
-    /**
-     * @param string $username
-     *
-     * @return \Generated\Shared\Transfer\GlueAuthenticationRequestTransfer
-     */
     public function haveGlueAuthenticationRequestTransfer(string $username): GlueAuthenticationRequestTransfer
     {
         $glueAuthenticationRequestContextTransfer = (new GlueAuthenticationRequestContextTransfer())
@@ -97,11 +89,6 @@ class AuthenticationOauthClientTester extends Actor
         ))->build();
     }
 
-    /**
-     * @param string $username
-     *
-     * @return \Generated\Shared\Transfer\OauthRequestTransfer
-     */
     protected function haveOauthRequestTransfer(string $username): OauthRequestTransfer
     {
         return (new OauthRequestBuilder(
@@ -113,9 +100,6 @@ class AuthenticationOauthClientTester extends Actor
         ))->build();
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\StoreTransfer
-     */
     protected function getStoreTransfer(): StoreTransfer
     {
         return (new StoreTransfer())
@@ -123,9 +107,6 @@ class AuthenticationOauthClientTester extends Actor
             ->setDefaultCurrencyIsoCode(static::DEFAULT_CURRENCY);
     }
 
-    /**
-     * @return \Spryker\Client\StoreExtension\Dependency\Plugin\StoreExpanderPluginInterface
-     */
     protected function createStoreStorageStoreExpanderPluginMock(): StoreExpanderPluginInterface
     {
         return Stub::makeEmpty(StoreExpanderPluginInterface::class, [
@@ -133,9 +114,6 @@ class AuthenticationOauthClientTester extends Actor
         ]);
     }
 
-    /**
-     * @return \Spryker\Client\ZedRequestExtension\Dependency\Plugin\MetaDataProviderPluginInterface
-     */
     protected function createStoreMetadataProviderPluginMock(): MetaDataProviderPluginInterface
     {
         return Stub::makeEmpty(MetaDataProviderPluginInterface::class, [

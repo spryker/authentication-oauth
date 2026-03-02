@@ -35,9 +35,6 @@ class AuthenticationOauthClientTest extends Unit
      */
     protected const TEST_USERNAME_INVALID = 'harald@spryker.com';
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -45,9 +42,6 @@ class AuthenticationOauthClientTest extends Unit
         $this->tester->addDependencies();
     }
 
-    /**
-     * @return void
-     */
     public function testAuthenticateWithValidCredentialsIsSuccessful(): void
     {
         //Arrange
@@ -62,9 +56,6 @@ class AuthenticationOauthClientTest extends Unit
         $this->assertNotEmpty($glueAuthenticationResponseTransfer->getOauthResponse()->getAccessToken());
     }
 
-    /**
-     * @return void
-     */
     public function testAuthenticateWithInvalidCredentialsIsFailed(): void
     {
         //Arrange

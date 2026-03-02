@@ -18,19 +18,11 @@ class AuthenticationOauth implements AuthenticationOauthInterface
      */
     protected $oauthFacade;
 
-    /**
-     * @param \Spryker\Zed\AuthenticationOauth\Business\Dependency\Facade\AuthenticationOauthToOauthFacadeInterface $oauthFacade
-     */
     public function __construct(AuthenticationOauthToOauthFacadeInterface $oauthFacade)
     {
         $this->oauthFacade = $oauthFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\GlueAuthenticationRequestTransfer $glueAuthenticationRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\GlueAuthenticationResponseTransfer
-     */
     public function authenticate(GlueAuthenticationRequestTransfer $glueAuthenticationRequestTransfer): GlueAuthenticationResponseTransfer
     {
         $oauthRequestTransfer = $glueAuthenticationRequestTransfer->getOauthRequestOrFail();

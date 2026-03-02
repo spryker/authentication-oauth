@@ -18,9 +18,6 @@ use Spryker\Zed\Kernel\Business\AbstractBusinessFactory;
  */
 class AuthenticationOauthBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\AuthenticationOauth\Business\Processor\AuthenticationOauthInterface
-     */
     public function createAuthenticationOauth(): AuthenticationOauthInterface
     {
         return new AuthenticationOauth(
@@ -28,9 +25,6 @@ class AuthenticationOauthBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\AuthenticationOauth\Business\Dependency\Facade\AuthenticationOauthToOauthFacadeInterface
-     */
     public function getOauthFacade(): AuthenticationOauthToOauthFacadeInterface
     {
         return $this->getProvidedDependency(AuthenticationOauthDependencyProvider::FACADE_OAUTH);

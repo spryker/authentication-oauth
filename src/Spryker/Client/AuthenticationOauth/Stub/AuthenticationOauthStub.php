@@ -18,19 +18,11 @@ class AuthenticationOauthStub implements AuthenticationOauthStubInterface
      */
     protected $zedRequestClient;
 
-    /**
-     * @param \Spryker\Client\AuthenticationOauth\Dependency\Client\AuthenticationOauthToZedRequestClientInterface $zedRequestClient
-     */
     public function __construct(AuthenticationOauthToZedRequestClientInterface $zedRequestClient)
     {
         $this->zedRequestClient = $zedRequestClient;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\GlueAuthenticationRequestTransfer $glueAuthenticationRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\GlueAuthenticationResponseTransfer
-     */
     public function authenticate(GlueAuthenticationRequestTransfer $glueAuthenticationRequestTransfer): GlueAuthenticationResponseTransfer
     {
         /** @var \Generated\Shared\Transfer\GlueAuthenticationResponseTransfer $glueAuthenticationResponseTransfer */

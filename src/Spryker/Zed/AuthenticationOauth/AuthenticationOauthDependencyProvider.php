@@ -21,11 +21,6 @@ class AuthenticationOauthDependencyProvider extends AbstractBundleDependencyProv
      */
     public const FACADE_OAUTH = 'FACADE_OAUTH';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideBusinessLayerDependencies(Container $container): Container
     {
         $container = parent::provideBusinessLayerDependencies($container);
@@ -34,11 +29,6 @@ class AuthenticationOauthDependencyProvider extends AbstractBundleDependencyProv
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addOauthFacade(Container $container): Container
     {
         $container->set(static::FACADE_OAUTH, function (Container $container) {

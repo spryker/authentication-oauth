@@ -64,9 +64,6 @@ class AuthenticationOauthBusinessTester extends Actor
      */
     protected const DEFAULT_CURRENCY = 'EUR';
 
-    /**
-     * @return void
-     */
     public function addDependencies(): void
     {
         $this->setDependency(ClientStoreDependencyProvider::PLUGINS_STORE_EXPANDER, [
@@ -74,11 +71,6 @@ class AuthenticationOauthBusinessTester extends Actor
         ]);
     }
 
-    /**
-     * @param string $username
-     *
-     * @return \Generated\Shared\Transfer\GlueAuthenticationRequestTransfer
-     */
     public function haveGlueAuthenticationRequestTransfer(string $username): GlueAuthenticationRequestTransfer
     {
         $glueAuthenticationRequestContextTransfer = (new GlueAuthenticationRequestContextTransfer())
@@ -92,11 +84,6 @@ class AuthenticationOauthBusinessTester extends Actor
         ))->build();
     }
 
-    /**
-     * @param string $username
-     *
-     * @return \Generated\Shared\Transfer\OauthRequestTransfer
-     */
     protected function haveOauthRequestTransfer(string $username): OauthRequestTransfer
     {
         return (new OauthRequestBuilder(
@@ -108,9 +95,6 @@ class AuthenticationOauthBusinessTester extends Actor
         ))->build();
     }
 
-    /**
-     * @return \Spryker\Client\StoreExtension\Dependency\Plugin\StoreExpanderPluginInterface
-     */
     protected function createStoreStorageStoreExpanderPluginMock(): StoreExpanderPluginInterface
     {
         $storeTransfer = (new StoreTransfer())

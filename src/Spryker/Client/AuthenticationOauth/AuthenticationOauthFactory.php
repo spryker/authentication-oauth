@@ -14,9 +14,6 @@ use Spryker\Client\Kernel\AbstractFactory;
 
 class AuthenticationOauthFactory extends AbstractFactory
 {
-    /**
-     * @return \Spryker\Client\AuthenticationOauth\Stub\AuthenticationOauthStubInterface
-     */
     public function createAuthenticationOauthStub(): AuthenticationOauthStubInterface
     {
         return new AuthenticationOauthStub(
@@ -24,9 +21,6 @@ class AuthenticationOauthFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Client\AuthenticationOauth\Dependency\Client\AuthenticationOauthToZedRequestClientInterface
-     */
     public function getZedRequestClient(): AuthenticationOauthToZedRequestClientInterface
     {
         return $this->getProvidedDependency(AuthenticationOauthDependencyProvider::CLIENT_ZED_REQUEST);
