@@ -28,7 +28,7 @@ class AuthenticationOauthClientTest extends Unit
     /**
      * @var string
      */
-    protected const TEST_USERNAME = 'sonia@spryker.com';
+    protected const TEST_USERNAME = 'sonia@acme.com';
 
     /**
      * @var string
